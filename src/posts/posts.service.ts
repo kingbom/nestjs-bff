@@ -7,7 +7,7 @@ import { Post } from './posts.interface';
 export class PostsService {
     public constructor(private readonly http: HttpService) { }
 
-    public getRecentPosts(): Observable<Post[]> {
+    public getPosts(): Observable<Post[]> {
         return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').pipe(
             map((response) => response.data),
         );

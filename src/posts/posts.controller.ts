@@ -11,10 +11,9 @@ export class PostsController {
 
     public constructor(private readonly service: PostsService) { }
 
-
     @Get()
-    public getRecentPosts(): Observable<PostDto[]> {
-        return this.service.getRecentPosts().pipe(
+    public getPosts(): Observable<PostDto[]> {
+        return this.service.getPosts().pipe(
             map(PostsMapper.mapRecentPosts),
         );
     }
